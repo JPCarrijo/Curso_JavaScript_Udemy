@@ -1,0 +1,31 @@
+#primeira {
+    margin-top: 50px;
+    border: solid;
+    border-radius: 30px;
+    padding-left: 10px;
+    width: 500px;
+}
+
+#inputValues {
+    width: 300px;
+}
+
+#texto2 {
+    width: 300px;
+}
+
+#segunda {
+    margin-top: 20px;
+    border: solid;
+    border-radius: 30px;
+    padding-left: 10px;
+    width: 500px;
+}
+
+#loadFile {
+    font-weight: bold;
+}
+
+#var {
+    padding-left: 25px;
+}
