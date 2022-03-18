@@ -1,0 +1,33 @@
+Objetos JS
+
+Forma literal ->
+const obj01 = {}
+
+Object em JS -> 
+const obj01 = new Object
+
+Funções construtoras ->
+function Produto(nome, preco, desc) {
+	this.nome = nome	//THIS define que o atributo é global, podendo ser usado fora da função
+	this.getPrecoComDesconto = () => {
+		return `O preço do produto ${nome} é : ${preco * (1 - desc)}´
+	}
+}
+
+Evitar Modificações:
+Object.preventExtensions -> não permite que insira novos atributos em um objeto, somente permite alterações e delet.
+
+Object.seal -> não permite inseriir e nem deletar, somente alterações.
+
+Array Js
+
+vetor.sort() -> organiza os elementos por ordem alfabética
+vetor.splice(1,1,'nome') -> vetor(indice, retirar, colocar)
+vetor.slice() -> cria um novo array a partir do elemento definido
+
+forEach() -> Percorre e array. É passado sempre 3 parâmetros. 1º: nome do elemento, 2º: índice, 3º: array. Necessariamente nessa ordem.
+É possível instanciar um forEach através do Array.prototype.function
+
+map() -> Cria um novo array, com base em um array. 1º: valor, 2º: índice, 3º array.
+
+filter() -> filtra dados de array. 
