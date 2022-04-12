@@ -7,7 +7,7 @@ for(let letra in 'Cod3r') {
 
 const assuntosEcma = ['Map', 'Set', 'Promise']
 
-for(let i in assuntosEcma) {
+for(let i of assuntosEcma) {
   //console.log(i); // Retornou as chaves do array
 }
 
@@ -26,18 +26,23 @@ for(let assunto of assuntosMap) {
 }
 
 for(let chave of assuntosMap.keys()) {
-  //console.log(chave);
+  console.log(chave);
 }
 
 for(let valor of assuntosMap.values()) {
-  //console.log(valor);
+  console.log(valor);
 }
 
 for(let [ch, vl] of assuntosMap.entries()) {
-  //console.log(ch, vl);
+  console.log(ch, vl);
 }
 
+// const s = new Set(['a', 'b', 'c'])
+// for(let letra of s) {
+//   console.log(letra);
+// }
+
 const s = new Set(['a', 'b', 'c'])
-for(let letra of s) {
+for(let letra in s) {
   console.log(letra);
 }

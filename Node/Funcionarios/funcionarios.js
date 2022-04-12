@@ -9,7 +9,7 @@ const salario = (acumulador, funAtual) => { // função REDUCE
 
 axios.get(url).then(response => {
   const funcionarios = response.data
-  console.log(funcionarios);
+  //console.log(funcionarios);
 
   // Mulher chinesa com menor salário
   const func = funcionarios
