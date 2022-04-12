@@ -35,12 +35,15 @@ function retornaValor() {
 //   .then(valor => console.log(valor))
 
 async function executar() {
+  let valor = await retornaValor()
   await esperaPor(1500)
-  console.log(`Executando async/await 1...`)
+  console.log(`Executando async/await ${valor}...`)
   await esperaPor(1500)
-  console.log(`Executando async/await 2...`)
+  console.log(`Executando async/await ${valor + 1}...`)
   await esperaPor(1500)
-  console.log(`Executando async/await 3...`)
+  console.log(`Executando async/await ${valor + 2}...`)
+
+  return valor + 3
 }
 
-executar()
+executar().then(valor => console.log(`Valor final: ${valor}`))
