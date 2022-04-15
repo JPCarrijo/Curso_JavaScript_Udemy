@@ -5,16 +5,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Exercícios </title>
+<style>
+  #conteudo{
+    padding: 30px 0;
+  }
+</style>
 </head>
 <body>
   <header>
-    <h1> Exercícios HTMl </h1>
+    <h1> Exercícios HTML </h1>
   </header>
   <nav>
-    <a href="exercicio/teste.html"> 00 - Teste </a>
+    <a href wb-nav="exercicio/teste.html"> 00 - Teste </a>  |
+    <a href wb-nav="exercicio/texto1.html"> 01 - Texto 1 </a> |
+    <a href wb-nav="exercicio/texto2.html"> 02 - Texto 2 </a> |
+    <a href wb-nav="exercicio/listas.html"> 03 - Texto 3 </a> |
+    <a href wb-nav="exercicio/listaAninhada.html"> 04 - Texto 4 </a>
   </nav>
-  <section id="conteudo">
+  <section id="conteudo"></section>
+  <footer> Curso Web Moderno </footer>
+  <!-- Capturando a tag 'a'-->
+  <!-- <script>
+    document.querySelectorAll('a').forEach(link => {
+      const conteudo = document.getElementById('conteudo');
 
-  </section>
+      link.onclick = (e) => {
+        e.preventDefault();
+        fetch(link.href)
+          .then(response => response.text())
+          .then(html => conteudo.innerHTML = html)
+      }
+    })
+  </script> -->
+  <!-- Capturando um parâmetro criado 'wb-nav'-->
+    <script>
+    document.querySelectorAll('[wb-nav]').forEach(link => {
+      const conteudo = document.getElementById('conteudo');
+
+      link.onclick = (e) => {
+        e.preventDefault();
+        fetch(link.getAttribute('wb-nav'))
+          .then(response => response.text())
+          .then(html => conteudo.innerHTML = html)
+      }
+    })
+  </script>
 </body>
 </html>
