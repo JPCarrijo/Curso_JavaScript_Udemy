@@ -2,15 +2,38 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Anatomia CSS</title>
-    <style>
-        /* ... */
-    </style>
+  <meta charset="UTF-8">
+  <title> Anatomia CSS </title>
+  <style>
+    .selector {
+      color: #fff;
+      font-size: 30pt;
+      text-align: center;
+      /* multiplos valores */
+      border: 5px solid navy; /* shorthand  property */
+      font-family: Helvetico, sans-serif;
+      /* funções */
+      width: calc(100% - 40px);
+      background: rgb(34,153,189);
+    }
+    /* Usando pseudo-classes */
+    .selector:hover {
+      background: orangered;
+    }
+    /* Usando pseudo-elements */
+    .selector::first-letter {
+      font-size: 60pt;
+      font-weight: bold;
+    }
+
+    /* padrão de nomenclatura? */
+    /* dash-case ou camelCase? */
+
+  </style>
 </head>
 
 <body>
-    <div class="selector">Conteúdo</div>
+  <div class="selector">Conteúdo</div>
 </body>
 
 </html>
