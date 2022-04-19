@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        function dilog() {
+          console.log(this);
+        }
+
+        HTMLCollection.prototype.dilog = dilog;
+        HTMLElement.prototype.dilog = dilog;
+        NodeList.prototype.dilog = dilog;
+        Node.prototype.dilog = dilog;
+
+        const lista = document.querySelector('div ul');
+        // lista.parentNode.dilog();
+        // lista.childNodes.dilog();
+
+        const primeiro = lista.firstChild;
+        primeiro.dilog();
+        primeiro.nextSibling.dilog();
+
+        const ultimo = lista.lastChild;
+        ultimo.dilog();
+        ultimo.previousSibling.dilog();
+
+        lista.children.dilog();
+        lista.firstElementChild.dilog();
+        lista.lastElementChild.dilog();
+        lista.parentNode.previousSibling.dilog();
+        lista.parentNode.nextSibling.dilog();
+
+        document.querySelectorAll('div ul li').dilog();
+    </script>
+</body>
+
+</html>
