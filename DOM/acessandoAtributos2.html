@@ -10,14 +10,33 @@
 <body class='conteudo exercicio'>
     <div>
         <label for="compras">Compras</label>
-        <ul id="compras" destino='escritório' data-urgencia="5">
+        <ul id="compras" destino='escritório' data-urgencia="5" data-blabla="opa"> <!-- recomendavel usar prefixo data- nas propriedades personalizadas -->
             <li>Café</li>
             <li>Água</li>
             <li>Copo Descartável</li>
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('div ul[destino="escritório"]');
+        console.log('Elemento "ul".....');
+        // console.log('childNodes', lista.childNodes);
+        console.log('destino', lista.id);
+        console.log('getAttribute', lista.getAttribute('destino'));
+        console.log('hasAttribute', lista.hasAttribute('destinoo')); /* false - não tem na tag */
+        lista.setAttribute('destino', 'caixa'); /* setAttribute - altera ou cria o atributo */
+        lista.setAttribute('status', 'pendente');
+        lista.removeAttribute('destino'); /* removeAttribute - remove o atributo */
+        console.log(lista.dataset);
+        // console.log(lista.dataset.urgencia);
+        lista.dataset.urgencia = 10;
+        console.log(lista.dataset.urgencia);
+        console.log(lista.getAttribute('data-urgencia'));
+
+
+        // Cuidado....
+        const label = document.querySelector('label');
+        console.log(label.htmlFor);
+        console.log(label.getAttribute('for'));
     </script>
 </body>
 

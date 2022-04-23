@@ -2,16 +2,32 @@
 <html>
 
 <head>
-    <meta charset='UTF-8'>
-    <title>Trabalhando com Eventos #01</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+  <meta charset='UTF-8'>
+  <title>Trabalhando com Eventos #01</title>
+  <link rel='stylesheet' href='css/estilo.css'>
 </head>
 
 <body class="conteudo exercicio">
-    <div>
-        <a href="https://google.com.br">Google</a>
-    </div>
-    <script>
-        // ...
-    </script>
+  <div>
+    <!-- onclick="navegar5s(event)"-->
+    <a espera-um-pouco href="https://google.com.br" >Google</a>
+  </div>
+  <script>
+    // const div = document.querySelector('div a');
+    // div.innerText = 'Globo.com';
+    const navegar5s = event => {
+      event.preventDefault();
+      console.log('Saindo em 5s....');
+      setTimeout(() => {
+        window.location.href = event.target.href;
+      }, 5000);
+    }
+    console.log(location.href);
+
+    // const a = document.querySelector('a');
+    // a.addEventListener('click', navegar5s);
+
+    const a = document.querySelector('[espera-um-pouco]');
+    a.addEventListener('click', navegar5s);
+  </script>
 </body>
