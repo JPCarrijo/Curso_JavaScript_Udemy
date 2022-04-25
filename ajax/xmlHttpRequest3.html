@@ -2,15 +2,47 @@
 <html>
 
 <head>
-    <meta charset='UTF-8'>
-    <title>XMLHttpRequest #03</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+  <meta charset='UTF-8'>
+  <title>XMLHttpRequest #03</title>
+  <link rel='stylesheet' href='css/estilo.css'>
 </head>
 
 <body class="conteudo exercicio">
-    <h1>Estados</h1>
+  <h1>Estados</h1>
 
-    <script>
-        // ...
-    </script>
+  <script>
+    function ajax(config) {
+      const xhr = new XMLHttpRequest();
+      xhr.open(config.metodo, config.url, true);
+
+      xhr.onreadystatechange = e => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          config.sucesso(xhr.responseXML)
+        } else if (xhr.readyState === 4 && xhr.status >= 400) {
+          config.erro({
+            code: xhr.status,
+            message: xhr.statusText
+          })
+        }
+      }
+      xhr.send();
+    }
+
+    ajax({
+      url: "./dados/estados.xml",
+      metodo: "get",
+      sucesso(resposta) {
+        const estados = resposta.getElementsByTagName('estado');
+        const item = Array.from(estados).reduce(
+          (acum, atual) => acum + `<li>${atual.attributes.nome.value}</li>`, ''
+        )
+        document.body.insertAdjacentHTML("beforeend", `<ol>${item}</ol>`)
+        console.log(item);
+      },
+      erro(e) {
+        const msg = document.createTextNode(`${e.code} - ${e.message}`);
+        document.body.appendChild(msg);
+      }
+    })
+  </script>
 </body>

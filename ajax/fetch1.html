@@ -2,15 +2,23 @@
 <html>
 
 <head>
-    <meta charset='UTF-8'>
-    <title>Fetch API #01</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+  <meta charset='UTF-8'>
+  <title>Fetch API #01</title>
+  <link rel='stylesheet' href='css/estilo.css'>
 </head>
 
 <body class="conteudo exercicio">
-    <h1>Estados</h1>
+  <h1>Estados</h1>
 
-    <script>
-        // ...
-    </script>
+  <script>
+    const url = './dados/estados.json';
+    fetch(url)
+      .then(response => response.json())
+      .then(estados => {
+        const lista = estados.reduce(
+          (acum, atual) => acum + `<li>${atual.nome}</li>`, ''
+        )
+        document.body.insertAdjacentHTML('beforeend', `<ol>${lista}</ol>`);
+      })
+  </script>
 </body>

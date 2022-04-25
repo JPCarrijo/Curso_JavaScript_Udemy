@@ -2,16 +2,27 @@
 <html>
 
 <head>
-    <meta charset='UTF-8'>
-    <title>Axios #01</title>
-    <link rel='stylesheet' href='css/estilo.css'>
-    <script src="js/axios.js"></script>
+  <meta charset='UTF-8'>
+  <title>Axios #01</title>
+  <link rel='stylesheet' href='css/estilo.css'>
+  <script src="js/axios.js"></script>
 </head>
 
 <body class="conteudo exercicio">
-    <h1>Estados</h1>
+  <h1>Estados</h1>
 
-    <script>
-        // ...
-    </script>
+  <script>
+    const url = './dados/estados.json';
+    axios(url)
+      .then(response => {
+        const lista = response.data.reduce(
+          (acum, atual) => acum + `<li>${atual.nome}</li>`, ''
+        )
+        document.body.insertAdjacentHTML('beforeend', `<ol>${lista}</ol>`);
+      })
+      .catch(e => {
+        const msg = document.createTextNode(e);
+        document.body.appendChild(msg);
+      });
+  </script>
 </body>
