@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Eventos #01</title>
+  <link rel='stylesheet' href='css/estilo.css'>
+  <script src='js/jquery.js'></script>
+  <style>
+    input {
+      font-size: 2em;
+    }
+
+  </style>
+</head>
+
+<body class='conteudo exercicio'>
+  <h1>Eventos #01</h1>
+  <div id='posicao'></div>
+  <div id='cliques'>Cliques: 0</div>
+  <input type="text" placeholder="Cor de Background">
+
+  <script>
+    const mostrarPosicaoMouse = (evento) => {
+      $('#posicao').html(`x: ${evento.clientX} y: ${evento.clientY}`);
+    }
+
+    $('body').on('mousemove', mostrarPosicaoMouse); // mousemove é um evento de mouse
+
+    $('#posicao').mouseover(e => {
+      $('body').off('mousemove', mostrarPosicaoMouse);
+    })
+
+    $('#posicao').mouseleave(e => {
+      $('body').on('mousemove', mostrarPosicaoMouse);
+    })
+
+    let cliques = 0;
+    $('body').click(e => {
+      cliques++;
+      $('#cliques').html(`Cliques: ${cliques}`);
+    });
+
+    let backgroundColor = $('body').css('background-color');
+
+    // $('input').keyup(function (e) {
+    //   $('body').css('background-color', e.target.value)
+    // });
+
+    $('input').keyup(function(e) {
+      const value = $(this).val();
+      if(value.match(/#[\da-fA-F]{3,6}/)) {
+        $('body').css('background-color', value);
+      } else {
+        $('body').css('background-color', backgroundColor);
+      }
+    })
+  </script>
+</body>
