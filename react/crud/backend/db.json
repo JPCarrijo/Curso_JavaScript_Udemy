@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "name": "Jessica Oliveira",
+      "email": "jessicaoliveira@gmail.com"
+    },
+    {
+      "name": "João Paulo Carrijo",
+      "email": "mecanica@hotmail.com",
+      "id": 4
+    },
+    {
+      "name": "thaisa f carrijo",
+      "email": "moreiralatas@hotmail.com",
+      "id": 5
+    }
+  ]
+}
