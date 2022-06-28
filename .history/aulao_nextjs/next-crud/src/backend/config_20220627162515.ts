@@ -1,0 +1,3 @@
+NEXT_APIKEY=AIzaSyDR5rnu_sAPSAyQDuNYR2lmpCpBOsQQtiY
+NEXT_AUTHDOMAIN=next-crud-65be3.firebaseapp.com
+NEXT_PROJECTID=next-crud-65be3

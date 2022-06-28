@@ -1,0 +1,13 @@
+.navegador {
+  padding: 30px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.inicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+}
